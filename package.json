@@ -1,0 +1,16 @@
+{
+  "name": "js-algoritms",
+  "version": "0.0.1",
+  "description": "Algorithms Implemented in JavaScript",
+  "main": "index.js",
+  "author": "Rizki Romadhoni",
+  "license": "MIT",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -r flow-remove-types/register **/test/*-test.js"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "flow-remove-types": "^1.2.0",
+    "mocha": "^3.2.0"
+  }
+}
