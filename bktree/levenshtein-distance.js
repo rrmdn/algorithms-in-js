@@ -15,7 +15,7 @@ const memoize = fn => (...args) => {
     return computedResult;
 };
 
-const getDistance = (a: string, b: string) => {
+const getDistance = memoize((a: string, b: string) => {
     if (!a.length) return b.length;
     if (!b.length) return a.length;
 
@@ -23,6 +23,6 @@ const getDistance = (a: string, b: string) => {
     const [y, ...ys] = b;
     if (x === y) return getDistance(xs, ys);
     return 1 + Math.min(getDistance(xs, b), getDistance(a, ys), getDistance(xs, ys));
-};
+});
 
-exports.getDistance = memoize(getDistance);
+exports.getDistance = getDistance;
